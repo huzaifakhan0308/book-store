@@ -1,17 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Book from './book';
 import '../styles/form.css';
 
-function form() {
+const Form = () => {
+  const [array, setArray] = useState([]);
+  const [author, setAuthor] = useState('');
+  const [title, setTitle] = useState('');
+
+  const AddBook = () => {
+    if (title && author) {
+      const obj = {
+        title,
+        author,
+      };
+      setArray([...array, obj]);
+      setTitle('');
+      setAuthor('');
+    }
+  };
+
   return (
     <div className="form-container">
+      <Book array={array} />
       <header>Add Book</header>
       <form action="">
-        <input type="text" placeholder="Title" />
-        <input type="text" placeholder="Author" />
-        <button type="button">Add</button>
+        <input type="text" placeholder="Title" value={title} onChange={(e) => { setTitle(e.target.value); }} />
+        <input type="text" placeholder="Author" value={author} onChange={(e) => { setAuthor(e.target.value); }} />
+        <button type="button" onClick={AddBook}>Add</button>
       </form>
     </div>
   );
-}
+};
 
-export default form;
+export default Form;

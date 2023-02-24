@@ -1,17 +1,27 @@
 import React from 'react';
-import Form from './form';
 import '../styles/book.css';
 
-export default function book() {
+export default function book({ array }) {
   return (
     <div className="book-container">
+      <header>books list</header>
       <ul>
-        <li>
-          <span>Title by &quot;Author&quot;  </span>
-          <button type="button">Delete</button>
-        </li>
+        {array.map((e, index) => (
+          <li key="li" className={index}>
+            <span>
+              {e.title}
+              {' '}
+              by
+            </span>
+            <span>
+              {' '}
+              {e.author}
+              {' '}
+            </span>
+            <button type="button">delete</button>
+          </li>
+        ))}
       </ul>
-      <Form />
     </div>
   );
 }
