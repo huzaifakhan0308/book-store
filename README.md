@@ -74,6 +74,17 @@ To run the project, run `npm start` to run the project
 - Twitter: [@huzaifakhan0308](https://twitter.com/home?lang=en)
 - LinkedIn: [huzaifa khan](https://www.linkedin.com/in/huzaifa-khan-938140256/)
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+## 🔭 Future Features <a name="future-features"></a>
+
+- **[Redux]**
+- **[Add more styles]**
+- **[Form submit]**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## 🤝 Contributing <a name="contributing"></a>
 
 Feel free to check [issues page](https://github.com/huzaifakhan0308/book-store/issues).
