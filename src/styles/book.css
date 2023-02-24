@@ -1,0 +1,12 @@
+.book-container {
+  margin-top: 10vh;
+}
+
+.book-container header {
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.book-container ul {
+  margin-top: 5vh;
+}
