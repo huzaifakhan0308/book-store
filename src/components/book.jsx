@@ -12,7 +12,7 @@ export default function Book() {
       <header>books list</header>
       <ul>
         {bookstore.map((e, index) => (
-          <li key={e.id}>
+          <li key={e.item_id}>
             <span>
               {e.title}
               {' '}

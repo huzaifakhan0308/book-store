@@ -5,6 +5,8 @@
 }
 
 .categories-container .category {
+  display: flex;
+  flex-direction: column;
   margin-top: 20vh;
   font-size: x-large;
   font-weight: bold;
