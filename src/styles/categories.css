@@ -4,8 +4,15 @@
   width: 100%;
 }
 
+.categories-container .category {
+  margin-top: 20vh;
+  font-size: x-large;
+  font-weight: bold;
+}
+
 .categories-container .check-status-btn {
   width: 15vh;
   height: 5vh;
   margin-top: 20vh;
+  cursor: pointer;
 }
