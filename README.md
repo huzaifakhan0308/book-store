@@ -18,7 +18,7 @@
 
 # 📖 Bookstore CMS <a name="about-project"></a>
 
-**Calculator** in this project, i create a Bookstore using React.
+**Bookstore** in this project, i create a Bookstore using React.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -79,7 +79,7 @@ To run the project, run `npm start` to run the project
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- **[Redux]**
+- **[Use External API libraries]**
 - **[Add more styles]**
 - **[Form submit]**
 

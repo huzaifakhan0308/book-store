@@ -16,7 +16,7 @@ const Form = () => {
       const obj = {
         title,
         author,
-        id: index,
+        item_id: index,
       };
       setArray([...array, obj]);
       dispatch(addBook(obj));
