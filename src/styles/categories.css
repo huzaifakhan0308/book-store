@@ -12,6 +12,11 @@
   font-weight: bold;
 }
 
+.categories-container .category div {
+  border-bottom: 2px solid black;
+  margin-bottom: 10px;
+}
+
 .categories-container .check-status-btn {
   width: 15vh;
   height: 5vh;

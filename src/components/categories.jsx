@@ -14,6 +14,7 @@ export default function Categories() {
   return (
     <div className="categories-container">
       <ul className="category" style={{ display: boolean ? 'flex' : 'none' }}>
+        <div>Underconstruction</div>
         {category.map((e) => (
           <li key={e.id}>
             {e.category}
