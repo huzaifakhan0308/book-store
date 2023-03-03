@@ -1,18 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { removeBook } from '../redux/books/booksSlice';
+import { deletBooks, getBooks } from '../redux/books/booksSlice';
 import '../styles/book.css';
 
 export default function Book() {
   const bookstore = useSelector((state) => state.books.bookstore);
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    dispatch(getBooks());
+  }, [dispatch]);
+
   return (
     <div className="book-container">
       <header>books list</header>
       <ul>
-        {bookstore.map((e, index) => (
-          <li key={e.item_id}>
+        {Object.keys(bookstore).map((itemId) => bookstore[itemId].map((e) => (
+          <li key={itemId}>
             <span>
               {e.title}
               {' '}
@@ -23,9 +27,11 @@ export default function Book() {
               {e.author}
               {' '}
             </span>
-            <button type="button" onClick={() => { dispatch(removeBook(index)); }}>delete</button>
+            <button type="button" onClick={async () => { await dispatch(deletBooks(itemId)); dispatch(getBooks()); }}>delete</button>
+            <br />
+            {e.category}
           </li>
-        ))}
+        )))}
       </ul>
     </div>
   );

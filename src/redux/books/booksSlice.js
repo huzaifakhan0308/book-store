@@ -1,46 +1,46 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import axios from 'axios';
+
+const BASE_URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/mR0gYiE3c1jvdl27L7yn/books/';
 
 const initialState = {
-  bookstore: [
-    {
-      item_id: 'item1',
-      title: 'The Great Gatsby',
-      author: 'John Smith',
-      category: 'Fiction',
-    },
-    {
-      item_id: 'item2',
-      title: 'Anna Karenina',
-      author: 'Leo Tolstoy',
-      category: 'Fiction',
-    },
-    {
-      item_id: 'item3',
-      title: 'The Selfish Gene',
-      author: 'Richard Dawkins',
-      category: 'Nonfiction',
-    },
-  ],
+  bookstore: [],
 };
 
-export const booksSlice = createSlice({
+export const getBooks = createAsyncThunk(
+  'books/getBooks',
+  async () => {
+    const response = await axios.get(BASE_URL);
+    return response.data;
+  },
+);
+
+export const postBooks = createAsyncThunk(
+  'books/postBooks',
+  async (obj) => {
+    const response = await axios.post(BASE_URL, obj);
+    return response.data;
+  },
+);
+
+export const deletBooks = createAsyncThunk(
+  'books/postBooks',
+  async (itemId) => {
+    const response = await axios.delete(BASE_URL + itemId);
+    return response.data;
+  },
+);
+
+const booksSlice = createSlice({
   name: 'books',
   initialState,
-  reducers: {
-    addBook: (state, action) => {
-      state.bookstore.push(action.payload);
-    },
-    removeBook: (state, action) => {
-      const newArray = state.bookstore.filter((book, index) => index !== action.payload);
-      return {
-        ...state,
-        bookstore: newArray,
-      };
-    },
+  extraReducers(builder) {
+    builder.addCase(getBooks.fulfilled, (state, action) => ({
+      ...state,
+      bookstore: action.payload,
+    }));
   },
 
 });
-
-export const { addBook, removeBook } = booksSlice.actions;
 
 export default booksSlice.reducer;

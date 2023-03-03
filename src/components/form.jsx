@@ -1,29 +1,33 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../redux/books/booksSlice';
+import { v4 as uuidv4 } from 'uuid';
+import { getBooks, postBooks } from '../redux/books/booksSlice';
 import '../styles/form.css';
 import Book from './book';
 
 const Form = () => {
-  const [array, setArray] = useState([]);
   const [author, setAuthor] = useState('');
   const [title, setTitle] = useState('');
   const dispatch = useDispatch();
-  const [index, setIndex] = useState(0);
+  const [select, setSelect] = useState('Fiction');
 
-  const AddBook = () => {
+  const AddBook = async () => {
     if (title && author) {
       const obj = {
         title,
         author,
-        item_id: index,
+        item_id: `item${uuidv4()}`,
+        category: select,
       };
-      setArray([...array, obj]);
-      dispatch(addBook(obj));
-      setIndex(index + 1);
+      await dispatch(postBooks(obj));
+      dispatch(getBooks());
       setTitle('');
       setAuthor('');
     }
+  };
+
+  const selectValue = (e) => {
+    setSelect(e.target.value);
   };
 
   return (
@@ -35,6 +39,12 @@ const Form = () => {
         <input type="text" placeholder="Author" value={author} onChange={(e) => { setAuthor(e.target.value); }} />
         <button type="button" onClick={AddBook}>Add</button>
       </form>
+      <label htmlFor="catagories">
+        <select onInput={selectValue}>
+          <option value="Fiction">Fiction</option>
+          <option value="Nonfiction">Nonfiction</option>
+        </select>
+      </label>
     </div>
   );
 };
