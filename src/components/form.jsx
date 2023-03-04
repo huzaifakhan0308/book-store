@@ -33,18 +33,23 @@ const Form = () => {
   return (
     <div className="form-container">
       <Book />
-      <header>Add Book</header>
-      <form action="">
-        <input type="text" placeholder="Title" value={title} onChange={(e) => { setTitle(e.target.value); }} />
-        <input type="text" placeholder="Author" value={author} onChange={(e) => { setAuthor(e.target.value); }} />
-        <button type="button" onClick={AddBook}>Add</button>
-      </form>
-      <label htmlFor="catagories">
-        <select onInput={selectValue}>
-          <option value="Fiction">Fiction</option>
-          <option value="Nonfiction">Nonfiction</option>
-        </select>
-      </label>
+      <div className="form-label-container">
+        <header className="add-book">Add Book</header>
+        <div className="form-label-div">
+          <form action="">
+            <input className="title-input" type="text" placeholder="Title" value={title} onChange={(e) => { setTitle(e.target.value); }} />
+            <input className="author-input" type="text" placeholder="Author" value={author} onChange={(e) => { setAuthor(e.target.value); }} />
+          </form>
+          <label htmlFor="catagories">
+            <select onInput={selectValue} defaultValue="" id="categories">
+              <option value="" disabled>Category</option>
+              <option value="Fiction">Fiction</option>
+              <option value="Nonfiction">Nonfiction</option>
+            </select>
+          </label>
+          <button type="button" onClick={AddBook}>Add Book</button>
+        </div>
+      </div>
     </div>
   );
 };

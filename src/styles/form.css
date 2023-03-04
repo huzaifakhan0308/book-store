@@ -1,10 +1,71 @@
 .form-container {
-  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
-  margin-left: 10vh;
 }
 
-.form-container header {
-  margin-top: 10vh;
-  margin-bottom: 2vh;
+/* books list style is in book.css file */
+
+.form-container .form-label-container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+.form-container .add-book {
+  margin-top: 7vh;
+  font-size: x-large;
+  font-weight: bolder;
+  opacity: 60%;
+  margin-left: 25px;
+}
+
+.form-container .form-label-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 5vh;
+  width: 100%;
+}
+
+.form-container form {
+  display: flex;
+  height: 5vh;
+  width: 100%;
+}
+
+.form-container form .title-input {
+  display: flex;
+  width: 50%;
+  padding-left: 10px;
+  outline: none;
+}
+
+.form-container form .author-input {
+  display: flex;
+  padding-left: 10px;
+  width: 50%;
+  margin-left: 10px;
+  outline: none;
+}
+
+.form-container .form-label-div label select {
+  width: 15vh;
+  height: 5vh;
+  margin-left: 10px;
+}
+
+.form-container .form-label-div button {
+  width: 18%;
+  margin-left: 10px;
+  margin-right: 25px;
+  height: 5vh;
+  border: none;
+  border-radius: 5px;
+  background-color: #0290ff;
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
 }
