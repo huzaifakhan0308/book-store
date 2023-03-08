@@ -18,8 +18,14 @@
 }
 
 .categories-container .check-status-btn {
-  width: 15vh;
+  width: 22vh;
   height: 5vh;
   margin-top: 20vh;
+  border-radius: 5px;
+  border: none;
+  background-color: #0290ff;
+  color: rgba(255, 255, 255, 0.89);
   cursor: pointer;
+  margin-bottom: 10px;
+  font-size: 16px;
 }

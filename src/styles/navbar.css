@@ -6,28 +6,55 @@
   font-family: "Poppins", sans-serif;
 }
 
+body {
+  width: 100%;
+  background-color: rgba(242, 242, 242, 0.618);
+}
+
+#root {
+  width: 100%;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
 nav {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   height: 10vh;
   width: 100%;
+  background-color: white;
   border-bottom: 2px solid rgba(0, 0, 0, 0.302);
 }
 
-nav header {
+.header-li-container {
+  display: flex;
+  align-items: center;
+}
+
+nav .bookstore-CMS {
   color: #0290ff;
-  margin-left: 10vh;
   font-size: 1.875rem;
   font-weight: bolder;
+  margin-left: 10vh;
 }
 
 nav ul {
-  display: flex;
   margin-left: 10vh;
+  display: flex;
   list-style: none;
 }
 
 nav ul li {
+  font-size: larger;
+}
+
+nav ul .categories {
   margin-left: 10vh;
   font-size: larger;
 }
@@ -39,4 +66,20 @@ nav ul li:hover {
 
 nav ul li :link {
   text-decoration: none;
+}
+
+nav .humanLogo-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5vh;
+  width: 5vh;
+  margin-right: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid rgba(0, 0, 0, 0.348);
+}
+
+nav .humanLogo-div img {
+  width: 70%;
 }
