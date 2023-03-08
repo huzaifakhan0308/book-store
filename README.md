@@ -36,7 +36,7 @@ HTML | CSS | JS | ES6 | React
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [https://book-store-6wut.onrender.com/]
+- https://book-store-6wut.onrender.com/
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
